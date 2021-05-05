@@ -114,6 +114,24 @@ if($_SESSION[$Coin.'claimtime'] < time() - $CConfig['Timer']){  // check if enou
 				$UserData['SuccessfulWithdraws'] = $PayoutCycles; // set the last SuccessfulWithdraw to the current PayoutCycle.
 				$PendingTokens = 0; // set the pending tokens to 0,
 				$Payout = round($CConfig['Ammount']*$PendingTokens, 3); // calculate new payout
+				$long_url = urlencode('[insert-url-here]/claim.php?coin='.$Coin); //insert your url here to get a shortlink created via your api everytime the ec api gives back a 200
+				$api_token = '[your-api-token-here]'; //insert your api token
+				session_start();
+				if (isset($_SESSION['count10'])) { //checks if the session token is already filled with something else than null
+    					echo('Session is set. Current round: '.$_SESSION['count10'].'. Shortlink will be generated if Session gets to 10'); //prints out the message, to delete it, simply delete this line
+				}else{$_SESSION['count10'] = 0;} //if session count is not NULL set it to 0
+				$api_url = "https://c2g.at/api?api={$api_token}&url={$long_url}"; //sets the api url to your shortlink url
+				$result = @json_decode(file_get_contents($api_url),TRUE); //json decode from api
+				if($result["status"] === 'error') { //if it prints an error
+					echo $result["message"]; //print out this error
+				} else { //if not
+				if($_SESSION['count10'] >= 10) {  //check if the session is greater or exactly ten
+				$_SESSION['count10'] = 0; //set session to zero if it was ten
+  				header("Location: " . $result["shortenedUrl"]); //open the shortened url
+  				exit;
+					}
+				$_SESSION['count10'] += 1; //if the session count wasn't 10, add  1
+					}
 			}elseif($Result['status'] === 404){ // the address is invalid: remove the address from the Dataset and End the Session
 				DeleteUserData($Coin, $_SESSION[$Coin."address"]);
 				$_SESSION['ErrMSG'] =  "ExpressCrypto didnt recognize the UserID: ".$_SESSION[$Coin.'address'];
