@@ -7,7 +7,7 @@
 */
 
 //until EC adds the endpoint to fetch currencies, please update this Array manually when EC adds a new coin:
-$Currencies = array("BTC","BCH","BCN","DASH","DGB","DOGE","ETH","LSK","LTC","XMR","NEO","PPC","POT","XRP","STRAT","TRX","WAVES","ZEC");
+$Currencies = array("BTC","BCH","BCN","DASH","DGB","DOGE","ETH","LSK","LTC","XMR","NEO","PPC","POT","XRP","STRAT","TRX","WAVES","ZEC","RVN","EXG","EXS"); //still hardcoded cause im too retarded to change the api to v2
 
 /* ==============================================================================================
  * """"" SCRIPT VALIDATION & FORM HANDLING                                                  =====
