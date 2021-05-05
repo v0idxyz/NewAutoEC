@@ -1,6 +1,6 @@
 # Autofaucet Script Name
 
-### a complete rewrite of the popular but mostly outdated Floodgate Script
+### a (not really) complete re-rewrite of the (moderately) popular but mostly outdated Floodgate Script
 
 
 | Table of Contents |
@@ -15,6 +15,7 @@
 
 a list of notable features of the script
 
+- Added a Shortlink being generated after every 10 Claims to slow the user down
 - New: ExpressCrypto implemented!
 - Revised Claim Process
 
