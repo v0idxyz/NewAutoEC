@@ -43,7 +43,7 @@ a list of notable features of the script
 
 - Future Proof
 
-  - ~~No Hardcoded currencies by dynamically fetching Currencies from EC~~ (removed until EC adds this endpoint)
+  - ~~No Hardcoded currencies by dynamically fetching Currencies from EC~~ (removed until EC adds this endpoint) + Added EX-Gold and EX-Silver, you can add more in the source Code
 
   - Images are pulled from EC whenever a currency is added
 
@@ -87,4 +87,6 @@ a list of notable features of the script
 
 - Done! you can now configure your script and never need to touch a config file again!
 
-<a href="https://hCaptcha.com/?r=befc8fa2362e" target="_blank">HCaptcha</a><br>
+- Open claim.php, hit Ctrl + F and search for 'count10', change the api code and url there, to get Shortlinks from your preferred Shortlink Provider
+
+- Open admin.php and add the Currencies you want to add under $Currencies
