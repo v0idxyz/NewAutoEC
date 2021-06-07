@@ -1,4 +1,4 @@
-# Autofaucet Script Name
+# V0iD's Expresscrypto Auto Faucet Scipt
 
 ### a (not really) complete re-rewrite of the (moderately) popular but mostly outdated Floodgate Script
 
