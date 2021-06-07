@@ -60,7 +60,7 @@ a list of notable features of the script
 
   - Read and Write Permissions Required
 
-- ExpressCrypto Account
+- ExpressCrypto Account + Expresscrypto API Key
 
 
 ##### Reccomended Requirements
